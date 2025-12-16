@@ -1,0 +1,20 @@
+# Multi-stage build for StockSync
+FROM node:18-alpine AS backend-build
+
+# Set working directory for backend
+WORKDIR /app/backend
+
+# Copy backend package files
+COPY backend/package*.json ./
+
+# Install backend dependencies
+RUN npm ci --only=production
+
+# Copy backend source code
+COPY backend/ ./
+
+# Expose backend port
+EXPOSE 3001
+
+# Start backend
+CMD ["npm", "start"]
