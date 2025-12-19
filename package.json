@@ -2,6 +2,10 @@
   "name": "stocksync",
   "version": "1.0.0",
   "description": "Full-stack inventory management system with real-time updates",
+  "workspaces": [
+    "backend",
+    "StockSync"
+  ],
   "scripts": {
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:backend": "cd backend && npm run dev",
@@ -10,7 +14,6 @@
     "start:backend": "cd backend && npm start",
     "build": "npm run build:frontend",
     "build:frontend": "cd StockSync && npm run build",
-  "postinstall": "cd StockSync && npm install",
     "install:all": "npm install && cd backend && npm install && cd ../StockSync && npm install",
     "clean": "rm -rf node_modules backend/node_modules StockSync/node_modules"
   },
