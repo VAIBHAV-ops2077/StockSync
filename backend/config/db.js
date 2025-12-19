@@ -2,8 +2,10 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/");
-    console.log("MongoDB Connected");
+    const mongoURI = process.env.MONGODB_URI || "mongodb://localhost:27017/stocksync";
+    await mongoose.connect(mongoURI);
+    console.log("MongoDB Connected to database: stocksync");
+    console.log("MongoDB URI:", mongoURI);
   } catch (error) {
     console.error("Error connecting to DB:", error);
     process.exit(1);

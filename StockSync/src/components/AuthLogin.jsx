@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
+import { API_BASE_URL } from '../config/api';
 
 function AuthLogin({ onLogin }) {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-
-  const API_BASE_URL = 'http://localhost:3001/api';
 
   const handleSubmit = async (e) => {
     e.preventDefault();

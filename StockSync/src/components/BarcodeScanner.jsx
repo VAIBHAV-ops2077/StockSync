@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useWebSocket } from './WebSocketProvider';
+import { API_BASE_URL } from '../config/api';
 
 function BarcodeScanner({ onScan }) {
   const [isScanning, setIsScanning] = useState(false);
@@ -8,7 +9,6 @@ function BarcodeScanner({ onScan }) {
   const [products, setProducts] = useState([]);
 
   const { socket, emitBarcodeScan } = useWebSocket();
-  const API_BASE_URL = 'http://localhost:3001/api';
 
   useEffect(() => {
     // Fetch products for barcode matching

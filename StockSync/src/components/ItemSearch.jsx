@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../config/api';
 
 function ItemSearch({ onItemSelect }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  const API_BASE_URL = 'http://localhost:3001/api';
 
   useEffect(() => {
     if (searchTerm.length > 2) {

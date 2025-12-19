@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
+import { SOCKET_URL } from '../config/api';
 
 function WebSocketProvider({ children }) {
   const [socket, setSocket] = useState(null);
@@ -7,7 +8,7 @@ function WebSocketProvider({ children }) {
 
   useEffect(() => {
     // Initialize WebSocket connection
-    const newSocket = io('http://localhost:3001', {
+    const newSocket = io(SOCKET_URL, {
       transports: ['websocket', 'polling']
     });
 
