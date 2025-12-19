@@ -12,7 +12,7 @@
     "dev:frontend": "cd StockSync && npm run dev",
     "start": "npm run start:backend",
     "start:backend": "cd backend && npm start",
-    "build": "npm run build:frontend",
+    "build": "npm run build --workspace=StockSync",
     "build:frontend": "cd StockSync && npm run build",
     "install:all": "npm install && cd backend && npm install && cd ../StockSync && npm install",
     "clean": "rm -rf node_modules backend/node_modules StockSync/node_modules"
