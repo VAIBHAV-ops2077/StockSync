@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   root: './StockSync',
   build: {
-    outDir: 'dist'
+    outDir: '../dist'
   }
 })
