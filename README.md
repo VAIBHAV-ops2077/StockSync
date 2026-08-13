@@ -1,5 +1,7 @@
 # StockSync - Inventory Management System
 
+Live Link - https://stock-sync-indol.vercel.app/
+
 A modern, full-stack inventory management system built with React.js and Node.js featuring real-time updates, dark mode UI, and comprehensive stock tracking.
 
 ## 🚀 Features
